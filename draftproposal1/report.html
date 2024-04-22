@@ -1,55 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UW SafeRoute - Report Incident</title>
-    <link rel="stylesheet" href="report.css">
-    <link rel="icon" href="favicon.ico">
-</head>
+    <link rel="stylesheet" href="./css/styling.css" />
+    <link rel="icon" href="favicon.ico" />
+  </head>
 
-<body>
+  <body>
     <!-- Navigation bar -->
     <nav>
-        <h1>Campus Cops</h1>
-        <img src="logo.png" alt="UW SafeRoute Logo" class="logo">
-
-         <!-- Need to be fill in with correct file  -->
-        <a href="index.html">Home</a>
-        <a href="report.html">Report Incident</a>
-        <a href="communitychat.html">Community Chatbox</a>
-        <a href="safety_resources.html"> Safety Resources</a>
+      <!-- Need to be fill in with correct file  -->
+      <a href="index.html">Home</a>
+      <a href="report.html">Report Incident</a>
+      <a href="communitychat.html">Community Chatbox</a>
+      <a href="safety_resources.html"> Safety Resources</a>
     </nav>
+
+    <header>
+      <h1>Campus Cops</h1>
+      <img src="logo.png" alt="UW SafeRoute Logo" class="logo" />
+    </header>
 
     <!-- Main content section -->
     <main>
-        <h1>Report Incident</h1>
-        <!-- Incident reporting form -->
-        <form action="submit_incident.php" method="post">
-            <label for="incident-title">Title:</label><br>
-            <input type="text" id="incident-title" name="incident-title" required><br>
-            
-            <label for="incident-description">Description:</label><br>
-            <textarea id="incident-description" name="incident-description" rows="4" required></textarea><br>
-            
-            <label for="incident-type">Type:</label><br>
-            <select id="incident-type" name="incident-type" required>
-                <option value="accident">Assault</option>
-                <option value="safety-issue">Theft</option>
-                <option value="hit-and-run">Hit and Run</option>
-                <option value="suspicious-activity">Suspicious Activity</option>
-                <option value="other">Other</option>
-            </select><br>
-            
-            <button type="submit">Submit Incident</button>
-        </form>
+      <h1>Report Incident</h1>
+      <!-- Incident reporting form -->
+      <form action="submit_incident.php" method="post">
+        <label for="incident-title">Title:</label><br />
+        <input
+          type="text"
+          id="incident-title"
+          name="incident-title"
+          required
+        /><br />
+
+        <label for="incident-description">Description:</label><br />
+        <textarea
+          id="incident-description"
+          name="incident-description"
+          rows="4"
+          required
+        ></textarea
+        ><br />
+
+        <label for="incident-type">Type:</label><br />
+        <select id="incident-type" name="incident-type" required>
+          <option value="accident">Assault</option>
+          <option value="safety-issue">Theft</option>
+          <option value="hit-and-run">Hit and Run</option>
+          <option value="suspicious-activity">Suspicious Activity</option>
+          <option value="other">Other</option></select
+        ><br />
+
+        <button type="submit">Submit Incident</button>
+      </form>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 UW CampusCops. All rights reserved. Contact us at info@uwcampuscops.com</p>
+      <p>
+        &copy; 2024 UW CampusCops. All rights reserved. Contact us at
+        info@uwcampuscops.com
+      </p>
     </footer>
-</body>
-
+  </body>
 </html>
