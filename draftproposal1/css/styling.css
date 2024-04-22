@@ -73,6 +73,7 @@ footer {
     color: #666;
 }
 
+/* chat css */
 * {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -277,6 +278,7 @@ input:focus {
         font-size: 28px;
     }
 }
+/* end of chat styling */
 
 /* Footer styling */
 footer {
