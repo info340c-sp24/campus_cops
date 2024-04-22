@@ -1,0 +1,195 @@
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+  }
+  
+  /* Styling the main container */
+  .container {
+      width: 80%;
+      margin: auto;
+      margin-top: 3rem;
+      height: 80%;
+  }
+  
+  /* Styling the msg-header container */
+  .msg-header {
+      font-weight: bold;
+  }
+  
+  /* Styling the inbox */
+  .chat-page {
+      padding: 0;
+  }
+  
+  .chats {
+      padding: 25px 15px;
+  }
+  
+  .msg-page {
+      max-height: 500px;
+      overflow-y: auto;
+  }
+  
+  /* Styling the msg-bottom container */
+   .msg-bottom {
+        position: relative;
+        height: 11%;
+        background-color: rgb(251, 214, 214);
+    }
+  /* Styling the input field */
+      .input-group {
+          float: right;
+          margin-top: 13px;
+          margin-right: 20px;
+          outline: none !important;
+          border-radius: 20px;
+          width: 61% !important;
+          background-color: #fff;
+          position: relative;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: stretch;
+      }
+      
+      .input-group>.form-control {
+          position: relative;
+          flex: 1 1 auto;
+          width: 1%;
+          margin-bottom: 0;
+      }
+      
+      .form-control {
+          border: none !important;
+          border-radius: 20px !important;
+          display: block;
+          height: calc(2.25rem + 2px);
+          padding: 0.375rem 0.75rem;
+          font-size: 1rem;
+          line-height: 1.5;
+          color: #495057;
+          background-color: #fff;
+          background-clip: padding-box;
+          transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+      }
+      
+      .input-group-text {
+          background: transparent !important;
+          border: none !important;
+          display: flex;
+          align-items: center;
+          padding: 0.375rem 0.75rem;
+          margin-bottom: 0;
+          font-size: 1.5rem;
+          font-weight: b;
+          line-height: 1.5;
+          color: #495057;
+          text-align: center;
+          white-space: nowrap;
+          background-color: #e9ecef;
+          border: 1px solid #ced4da;
+          border-radius: 0.25rem;
+          font-weight: bold !important;
+          cursor: pointer;
+      }
+      
+      input:focus {
+          outline: none;
+          border: none !important;
+          box-shadow: none !important;
+      }
+  
+  .received-msg {
+      display: inline-block;
+      vertical-align: top;
+      width: 92%;
+  }
+  .received-msg-inbox {
+      width: 57%;
+  }
+  
+  .received-msg-inbox p {
+      background: #efefef none repeat scroll 0 0;
+      border-radius: 10px;
+      color: #646464;
+      font-size: 14px;
+      margin-left: .3rem;
+      padding: 1rem;
+      width: 100%;
+      box-shadow: rgb(0 0 0 / 25%) 0px 5px 5px 2px;
+  }
+      p {
+      overflow-wrap: break-word;
+  }
+  
+  /* Styling the msg-sent time  */
+  .time {
+      color: #777;
+      display: block;
+      font-size: 12px;
+      margin: 8px 0 0;
+  }
+  .outgoing-chats {
+      overflow: hidden;
+      margin: 26px 20px;
+  }
+  
+  .outgoing-chats-msg p {
+      background-color: hsl(195, 65%, 81%);
+      color: rgb(151, 151, 151);
+      border-radius: 10px;
+      font-size: 14px;
+      color: rgb(56, 56, 56);
+      width: 100%;
+      padding: 1rem;
+      box-shadow: rgb(0 0 0 / 25%) 0px 2px 5px 2px;
+  }
+  .outgoing-chats-msg {
+          float: right;
+          width: 46%;
+          padding-right: 1rem;
+      }
+  
+  /* Styling the avatar */
+  @media only screen and (max-device-width: 850px) {
+      *,
+      .time {
+          font-size: 28px;
+      }
+  
+      .msg-header {
+          height: 5%;
+      }
+      .msg-page {
+          max-height: none;
+      }
+      .received-msg-inbox p {
+          font-size: 28px;
+      }
+      .outgoing-chats-msg p {
+          font-size: 28px;
+      }
+  }
+  
+  @media only screen and (max-device-width: 450px) {
+      *,
+      .time {
+          font-size: 28px;
+      }
+  
+      .msg-header {
+          height: 5%;
+      }
+      .msg-page {
+          max-height: none;
+      }
+      .received-msg-inbox p {
+          font-size: 28px;
+      }
+      .outgoing-chats-msg p {
+          font-size: 28px;
+      }
+  }
+  
+  
