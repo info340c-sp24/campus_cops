@@ -1,12 +1,8 @@
-import Head from "./components/Head";
-import Footer from "./components/Footer";
-
 import uwNightShuttle from "../assets/uw-night-shuttle.png";
 
 function SafteyResources() {
   return (
     <>
-      <Head />
       <main>
         <section>
           <div className="container">
@@ -61,7 +57,6 @@ function SafteyResources() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }
