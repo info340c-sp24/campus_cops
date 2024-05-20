@@ -7,13 +7,6 @@ import logo from '../assets/logo.png';
 function Welcome() {
   return (
     <>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/reportincident">Report Incident</Link>
-        <Link to="/communitychatbox">Community Chatbox</Link>
-        <Link to="/safteyresources">Safety Resources</Link>
-      </nav>
-
       <header>
         <h1>Campus Cops</h1>
         <img src={logo} alt="UW SafeRoute Logo" className="logo" />
