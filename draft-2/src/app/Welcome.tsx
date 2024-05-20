@@ -1,5 +1,3 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import uwRedSquare from '../assets/uw-red-square.avif';
 import uwCampusMap from '../assets/UW-Campus-Map.png';
 import logo from '../assets/logo.png';
