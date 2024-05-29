@@ -1,48 +1,76 @@
-function ReportIncident(props: any) {
+import { useState } from 'react';
+import { CampusMap, Location } from './components/CampusMap';
+import CAMPUS_LOCATIONS from './data/CampusLocations';
+
+function ReportIncident() {
+    const [incidentLocationName, setIncidentLocationName] = useState<string>();
+    const [incidentType, setIncidentType] = useState<string>();
+    const [incidentLocations, setIncidentLocations] = useState<Location[]>(CAMPUS_LOCATIONS);
+
+    const onReportIncidentSubmit = (event: any) => {
+        event.preventDefault();
+        let updatedIncidentLocations = incidentLocations.map(location => {
+            if (location.name === incidentLocationName) {
+                return {
+                    ...location,
+                    incidentType: incidentType
+                };
+            }
+            return location;
+        });
+
+        setIncidentLocations(updatedIncidentLocations);
+    };
+
     return (
         <>
             <main>
                 <h1>Report Incident</h1>
-                <form action="submit_incident.php" method="post">
-                <label htmlFor="incident-title">Title:</label>
-                <br />
-                <input
-                    type="text"
-                    id="incident-title"
-                    name="incident-title"
-                    required
-                />
-                <br />
-        
-                <label htmlFor="incident-description">Description:</label>
-                <textarea
-                    id="incident-description"
-                    name="incident-description"
-                    rows={4}
-                    required
-                />
-                <br />
+                <CampusMap incidentLocations={incidentLocations} />
+                <div className="content">                
+                    <form onSubmit={onReportIncidentSubmit}>
+                        <label htmlFor="incident-title">Title:</label>
+                        <br />
+                        <input
+                            type="text"
+                            name="incident-title"
+                        />
+                        <br />
+                        
+                        <label htmlFor="incident-location">Location:</label>
+                        <select 
+                            name="incident-location" 
+                            value={incidentLocationName}
+                            onChange={(choice) => setIncidentLocationName(choice.target.value)}
+                            required
+                        >
+                            <option disabled selected> -- select an option -- </option>
+                            {CAMPUS_LOCATIONS.map((location: Location) => (
+                                <option value={location.name} key={location.name}>{location.name}</option>
+                            ))};
+                        </select>
+                        <br />
                 
-                <label htmlFor="incident-location">Location:</label>
-                <select id="incident-location" name="incident-location" required>
-                    {props.locations.map((location: any) => (
-                        <option value={location.name} key={location.name}>{location.name}</option>
-                    ))};
-                </select>
-                <br />
-        
-                <label htmlFor="incident-type">Type:</label><br />
-                <select id="incident-type" name="incident-type" required>
-                    <option value="accident">Assault</option>
-                    <option value="safety-issue">Theft</option>
-                    <option value="hit-and-run">Hit and Run</option>
-                    <option value="suspicious-activity">Suspicious Activity</option>
-                    <option value="other">Other</option>
-                </select>
-                <br />
-                
-                <button type="submit">Submit Incident</button>
-                </form>
+                        <label htmlFor="incident-type">Type:</label><br />
+                        <select 
+                            id="incident-type" 
+                            name="incident-type" 
+                            value={incidentType}
+                            onChange={(choice) => setIncidentType(choice.target.value)}
+                            required
+                        >
+                            <option disabled selected> -- select an option -- </option>
+                            <option value="Assault">Assault</option>
+                            <option value="Safety Issue">Theft</option>
+                            <option value="Hit and Run">Hit and Run</option>
+                            <option value="Suspicious Activity">Suspicious Activity</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <br />
+                        
+                        <button type="submit">Submit Incident</button>
+                    </form>
+                </div>
             </main>
         </>
         );
