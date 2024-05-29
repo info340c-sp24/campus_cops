@@ -25,6 +25,10 @@ nav a {
     margin: 0 10px;
 }
 
+p {
+    padding-top: 1rem;
+}
+
 main {
     max-width: 600px;
     margin: 20px auto;
@@ -78,6 +82,11 @@ footer {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+}
+
+.content {
+    max-width: 600px;
+    margin-top: 1rem;
 }
 
 /* Styling the main container */
