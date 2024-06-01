@@ -1,0 +1,39 @@
+[
+  {
+
+      "text": "It's so cold out today!",
+      "timestamp": 1320161040000,
+      "channel": "general",
+      "isCurrentUser": true
+  },
+  {
+      "text": "It's warm over here",
+      "timestamp": 1320161760000,
+      "channel": "general",
+      "isCurrentUser": true
+  },
+  {
+      "text": "Lucky duck",
+      "timestamp": 1320162060000,
+      "channel": "general",
+      "isCurrentUser": false
+  },
+  {
+      "text": "I'm not a duck!",
+      "timestamp": 1320162120000,
+      "channel": "general",
+      "isCurrentUser": true
+  },
+  {
+      "text": "Wassup! It's me y'all",
+      "timestamp": 1320224280000,
+      "channel": "random",
+      "isCurrentUser": false
+  },
+  {
+      "text": "Who?",
+      "timestamp": 1320224640000,
+      "channel": "random",
+      "isCurrentUser": false
+  }
+]

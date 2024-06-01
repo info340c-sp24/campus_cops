@@ -1,8 +1,10 @@
 import uwNightShuttle from "../assets/uw-night-shuttle.png";
+import Head from "./components/Head";
 
 function SafteyResources() {
   return (
     <>
+    <Head/>
       <main>
         <section>
           <div className="container">

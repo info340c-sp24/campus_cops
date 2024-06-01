@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CampusMap, Location } from './components/CampusMap';
+// import { CampusMap, Location } from './components/CampusMap';
 import CAMPUS_LOCATIONS from './data/CampusLocations';
 
 function ReportIncident() {

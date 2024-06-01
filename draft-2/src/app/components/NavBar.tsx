@@ -5,7 +5,7 @@ function NavBar() {
     <nav>
       <Link to={"/"}>Home</Link>
       <Link to={"/reportincident"}>Report Incident</Link>
-      <Link to={"/communitychatbox"}>Community Chatbox</Link>
+      <Link to={"/communitychatbox"}>Community Chat Forum</Link>
       <Link to={"/safteyresources"}>Safety Resources</Link>
     </nav>
   );
