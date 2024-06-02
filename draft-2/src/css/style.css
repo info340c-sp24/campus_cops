@@ -11,12 +11,17 @@ body {
 }
 
 nav {
-    background-color: hsl(195, 65%, 81%);
+    background-color: #1b0251;
     color: white;
     padding: 10px 0;
     display:flex;
     justify-content: center; 
     text-align: center;
+}
+
+nav.img{
+    float:left;
+    
 }
 
 nav a {
@@ -74,7 +79,7 @@ button[type="submit"]:hover {
 footer {
     text-align: center;
     margin-top: 50px;
-    color: #666;
+    color: #1b0251;
 }
 
 /* chat css */
@@ -151,7 +156,7 @@ html, body, #root, #root>div {
 
 /* Styling the header */
 header {
-    background-color: #b0deee;
+    background-color: #1b0251;
     color: #ffffff;
     padding: 20px;
     text-align: center;
