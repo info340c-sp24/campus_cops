@@ -3,15 +3,16 @@ import ReportIncident from "./app/ReportIncident";
 import SafteyResources from "./app/SafteyResources";
 import Welcome from "./app/Welcome";
 
-import Head from "./app/components/Head";
+// import Nav from "./app/components/Head";
 import Footer from "./app/components/Footer";
 
 import { Routes, Route, Navigate } from "react-router-dom";
+import NavBar from "./app/components/NavBar";
 
 function App() {
   return (
     <>
-      <Head />
+      <NavBar />
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/reportincident" element={<ReportIncident />} />
