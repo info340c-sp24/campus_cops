@@ -28,6 +28,19 @@ nav a {
     color: white;
     text-decoration: none;
     margin: 0 10px;
+    padding: 2px;
+}
+
+nav .active {
+    color: #1b0251;
+    background-color: white;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background: #4E4E4E;
+    border-radius: 5px;
+    font-weight: normal;
 }
 
 p {

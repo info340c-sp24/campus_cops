@@ -1,10 +1,9 @@
 import uwNightShuttle from "../assets/uw-night-shuttle.png";
-import Head from "./components/Head";
 
 function SafteyResources() {
   return (
     <>
-    <Head/>
+      <h1>University of Washington Safety Resources</h1>
       <main>
         <section>
           <div className="container">

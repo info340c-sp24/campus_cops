@@ -1,20 +1,38 @@
-import uwRedSquare from '../assets/uw-red-square.avif';
-import uwCampusMap from '../assets/UW-Campus-Map.png';
-import logo from '../assets/logo.png';
+import uwRedSquare from "../assets/uw-red-square.avif";
+import uwCampusMap from "../assets/UW-Campus-Map.png";
+import logo from "../assets/logo.png";
 
 function Welcome() {
   return (
     <>
-      <header>
-        <h1>Welcome to Campus Cops</h1>
-      </header>
+      <h1>Welcome to Campus Cops</h1>
 
       <main>
         <div className="container">
           <div className="content">
-            <img src={uwRedSquare} alt="UW Red Square during cherry blossom" width="550" />
-            <cite><a href="https://unsplash.com/photos/people-walking-on-street-during-daytime-cI2_bHXCzRg" target="_blank" rel="noopener noreferrer">Image by Eunice Choi</a></cite>
-            <p>Welcome to UW Campus Cops, your dedicated safety companion on the University of Washington (UW) Seattle campus. We understand the importance of campus safety and have developed this platform to enhance the well-being and security of all students, faculty, and staff. Our app is designed to address various safety challenges, including theft, assault, and navigation in poorly lit or unfamiliar areas.</p>
+            <img
+              src={uwRedSquare}
+              alt="UW Red Square during cherry blossom"
+              width="550"
+            />
+            <cite>
+              <a
+                href="https://unsplash.com/photos/people-walking-on-street-during-daytime-cI2_bHXCzRg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Image by Eunice Choi
+              </a>
+            </cite>
+            <p>
+              Welcome to UW Campus Cops, your dedicated safety companion on the
+              University of Washington (UW) Seattle campus. We understand the
+              importance of campus safety and have developed this platform to
+              enhance the well-being and security of all students, faculty, and
+              staff. Our app is designed to address various safety challenges,
+              including theft, assault, and navigation in poorly lit or
+              unfamiliar areas.
+            </p>
           </div>
 
           <div className="content">
@@ -30,7 +48,10 @@ function Welcome() {
           </div>
         </div>
       </main>
-      <footer>© 2024 UW CampusCops. All rights reserved. Contact us at info@uwcampuscops.com</footer>
+      <footer>
+        © 2024 UW CampusCops. All rights reserved. Contact us at
+        info@uwcampuscops.com
+      </footer>
     </>
   );
 }

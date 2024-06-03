@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../../assets/campus_cops_logo.webp';
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+import logo from "../../assets/campus_cops_logo.webp";
 
 function NavBar() {
   return (
-    <nav>
+    <header>
       <img src={logo} alt="Campus Cops Logo" className="logo" />
-      <Link to={"/"}>Home</Link>
-      <Link to={"/reportincident"}>Report Incident</Link>
-      <Link to={"/communitychatbox"}>Community Chat Forum</Link>
-      <Link to={"/safteyresources"}>Safety Resources</Link>
-    </nav>
+      <nav>
+        <br />
+        <NavLink to={"/"}>Home</NavLink>
+        <NavLink to={"/reportincident"}>Report Incident</NavLink>
+        <NavLink to={"/communitychatbox"}>Community Chat Forum</NavLink>
+        <NavLink to={"/safteyresources"}>Safety Resources</NavLink>
+      </nav>
+    </header>
   );
 }
 

@@ -1,17 +1,16 @@
-import ChatHeader from './components/ChatHeader.tsx';
-import { ChatPane } from './components/ChatPane.tsx';
+import ChatHeader from "./components/ChatHeader.tsx";
+import { ChatPane } from "./components/ChatPane.tsx";
 
 function CommunityChat() {
-
   return (
-    <div className="container-fluid d-flex flex-column">
-      <ChatHeader/>
+    <>
+      <h1>UW Seattle Community Chat Forum</h1>
       <div className="row flex-grow-1">
         <div className="col d-flex flex-column">
-          <ChatPane/>
+          <ChatPane />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
