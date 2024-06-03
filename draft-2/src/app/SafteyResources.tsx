@@ -57,10 +57,8 @@ function SafteyResources() {
           </div>
         </section>
       </main>
-      <footer>© 2024 UW CampusCops. All rights reserved. Contact us at info@uwcampuscops.com</footer>
     </>
   );
 }
 
 export default SafteyResources;
-
