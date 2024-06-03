@@ -10,15 +10,14 @@ function Welcome() {
             <img
               src={uwRedSquare}
               alt="UW Red Square during cherry blossom"
-              width="550"
             />
-            <cite>
+            <cite>Image by<span> </span>
               <a
                 href="https://unsplash.com/photos/people-walking-on-street-during-daytime-cI2_bHXCzRg"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Image by Eunice Choi
+              Eunice Choi
               </a>
             </cite>
             <p>

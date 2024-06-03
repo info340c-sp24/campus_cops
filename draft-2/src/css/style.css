@@ -1,28 +1,100 @@
+/* This website's unified Navigation style */
+footer {
+    text-align: center;
+    margin-top: 1em;
+    color: white;
+    background-color: #341c63;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
 .logo {
     width: 100px; 
     height: auto; 
     float: left;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
+.logo-container {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #f8d06a;
+    text-align: left; 
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+nav {
+    background-color: #341c63;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+nav a:hover {
+    color: #f8d06a;
 }
 
 p {
     padding-top: 1rem;
 }
 
+/* Main content and responsive styles */
 main {
-    max-width: 600px;
+    width: 90%; 
+    max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.content img {
+    width: 100%;
+    height: auto;
+}
+
+cite {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-style: normal;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+/* Form elements */
 label {
     font-weight: bold;
 }
@@ -51,164 +123,113 @@ button[type="submit"]:hover {
     background-color: #5a7589;
 }
 
-footer {
-    text-align: center;
-    margin-top: 1em ;
-    color: white;
-    background-color: #341c63;
-}
-
-/* chat css */
-* {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
+/* Chat CSS */
 .content {
-    max-width: 600px;
-    margin-top: 5;
+    max-width: 100%; 
+    margin-top: 5px;
 }
 
-/* hack the sizes */
 html, body, #root, #root>div {
     height: 100%;
-  }
-  
-  .material-icons {
+}
+
+.material-icons {
     position: relative;
     top: 4px;
-  }
-  
-  /** Messages **/
-  .scrollable-pane {
-    /* will enable it to scroll content */
+}
+
+/** Messages **/
+.scrollable-pane {
     flex: 1 1 auto;
     height: 0;
     overflow: auto;
-  }
-  
-  .message img {
+}
+
+.message img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-  }
-  
-  .message p {
+}
+
+.message p {
     margin: 0;
-  }
-  
-  .message .user-name {
+}
+
+.message .user-name {
     font-weight: bold;
-  }
-  
-  /* like-button */
-  .like-button {
+}
+
+/* like-button */
+.like-button {
     padding: 0;
-  }
-  .like-button .material-icons {
-    position:relative;
-    top:0px;
-  }
+}
 
-  
-  /** Compose Form **/
-  textarea.form-control {
+.like-button .material-icons {
+    position: relative;
+    top: 0px;
+}
+
+/** Compose Form **/
+textarea.form-control {
     resize: none;
-  }
-  
-  .input-group img {
-    max-width:75px;
-  }
-  
-  .highlighted {
-    border: 3px solid greenyellow;
-  }
+}
 
-/* Styling the header */
+.input-group img {
+    max-width: 75px;
+}
+
+.highlighted {
+    border: 3px solid greenyellow;
+}
+
+/* Header style */
 header {
     background-color: #341c63;
     color: #ffffff;
     padding: 20px;
     text-align: center;
-    width:100%;
+    width: 100%;
 }
 
 /* Responsive styling */
-@media only screen and (max-device-width: 850px) {
-    *,
-    .time {
-        font-size: 28px;
+@media (max-width: 768px) {
+    .logo-container {
+        font-size: 1.5rem;
     }
 
-    .msg-header {
-        height: 5%;
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .msg-page {
-        max-height: none;
+    nav a {
+        margin: 5px 0;
     }
 
-    .received-msg-inbox p,
-    .outgoing-chats-msg p {
-        font-size: 28px;
-    }
-}
-
-@media only screen and (max-device-width: 450px) {
-    *,
-    .time {
-        font-size: 28px;
-    }
-
-    .msg-header {
-        height: 5%;
-    }
-
-    .msg-page {
-        max-height: none;
-    }
-
-    .received-msg-inbox p,
-    .outgoing-chats-msg p {
-        font-size: 28px;
+    .content {
+        padding: 10px;
     }
 }
-/* This website's unified Navigation style, do not change */
-.logo-container {
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
-    font-weight: bold;
-    line-height: 1.2;
-    color: #f8d06a;
-    text-align: left; 
-    font-family: 'Trebuchet MS', sans-serif;
-}
 
-nav {
-    background-color: #341c63;
-    color: white;
-    padding: 10px 0;
-    display:flex;
-    justify-content: space-between; 
-    text-align: right;
-    align-items: center;
-}
+@media (max-width: 450px) {
+    .logo {
+        width: 75px;
+    }
 
-nav .active {
-    background-color: white;
-    color: #341c63;
-    border-radius: 5px;
-}
+    .logo-container {
+        font-size: 1.2rem;
+    }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    padding: 3px;
-}
+    nav {
+        padding: 5px; 
+    }
 
-nav a:hover {
-    color:#f8d06a;
+    nav a {
+        margin: 5px 0;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.8rem; 
+    }
 }

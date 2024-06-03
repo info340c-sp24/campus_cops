@@ -25,8 +25,8 @@ function ReportIncident() {
 
   return (
     <>
-      <h1>Report Incident</h1>
       <main>
+      <h1>Report Incident</h1>
         <CampusMap incidentLocations={incidentLocations} />
         <div className="content">
           <form onSubmit={onReportIncidentSubmit}>

@@ -5,12 +5,19 @@ function SafteyResources() {
     <>
       <main>
         <section>
-          <div className="container">
+          <div className="content">
             <img
               src={uwNightShuttle}
               alt="Map of the University of Washington night shuttle pick up location in West and North campus."
               width="500"
             />
+            <cite>Map from <span> </span>
+              <a
+                href="https://transportation.uw.edu/getting-around/shuttles/nightride"
+              >
+              University of Washington
+              </a>
+            </cite>
             <h2>Emergency Contacts</h2>
             <ul>
               <li>Police Department 911</li>
