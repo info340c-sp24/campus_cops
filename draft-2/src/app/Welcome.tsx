@@ -1,12 +1,9 @@
 import uwRedSquare from "../assets/uw-red-square.avif";
 import uwCampusMap from "../assets/UW-Campus-Map.png";
-import logo from "../assets/logo.png";
 
 function Welcome() {
   return (
     <>
-      <h1>Welcome to Campus Cops</h1>
-
       <main>
         <div className="container">
           <div className="content">

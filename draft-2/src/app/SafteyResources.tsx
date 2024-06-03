@@ -3,7 +3,6 @@ import uwNightShuttle from "../assets/uw-night-shuttle.png";
 function SafteyResources() {
   return (
     <>
-      <h1>University of Washington Safety Resources</h1>
       <main>
         <section>
           <div className="container">
@@ -58,8 +57,10 @@ function SafteyResources() {
           </div>
         </section>
       </main>
+      <footer>© 2024 UW CampusCops. All rights reserved. Contact us at info@uwcampuscops.com</footer>
     </>
   );
 }
 
 export default SafteyResources;
+

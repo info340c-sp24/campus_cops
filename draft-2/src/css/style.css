@@ -1,46 +1,13 @@
 .logo {
     width: 100px; 
     height: auto; 
+    float: left;
 }
 
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
-}
-
-nav {
-    background-color: #1b0251;
-    color: white;
-    padding: 10px 0;
-    display:flex;
-    justify-content: center; 
-    text-align: center;
-}
-
-nav.img{
-    float:left;
-    
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    padding: 2px;
-}
-
-nav .active {
-    color: #1b0251;
-    background-color: white;
-    border-radius: 5px;
-}
-
-nav a:hover {
-    background: #4E4E4E;
-    border-radius: 5px;
-    font-weight: normal;
 }
 
 p {
@@ -54,11 +21,6 @@ main {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
 }
 
 label {
@@ -91,8 +53,9 @@ button[type="submit"]:hover {
 
 footer {
     text-align: center;
-    margin-top: 50px;
-    color: #1b0251;
+    margin-top: 1em ;
+    color: white;
+    background-color: #341c63;
 }
 
 /* chat css */
@@ -161,18 +124,14 @@ html, body, #root, #root>div {
   .highlighted {
     border: 3px solid greenyellow;
   }
-  
-  header .nav-item {
-    display: flex;
-    align-items:center;
-  }
 
 /* Styling the header */
 header {
-    background-color: #1b0251;
+    background-color: #341c63;
     color: #ffffff;
     padding: 20px;
     text-align: center;
+    width:100%;
 }
 
 /* Responsive styling */
@@ -215,11 +174,34 @@ header {
         font-size: 28px;
     }
 }
-/* end of chat styling */
+/* This website's unified Navigation style, do not change */
+.logo-container {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #f8d06a;
+    text-align: left; 
+    font-family: 'Trebuchet MS', sans-serif;
+}
 
-/* Footer styling */
-footer {
-    text-align: center;
-    margin-top: 50px;
-    color: #666;
+nav {
+    background-color: #341c63;
+    color: white;
+    padding: 10px 0;
+    display:flex;
+    justify-content: space-between; 
+    text-align: right;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    color:#f8d06a;
 }
