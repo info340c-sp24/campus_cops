@@ -5,13 +5,11 @@ export function ComposeForm(props) {
 
   const [inputtedText, setInputtedText] = useState('');
 
-  //typing
   const handleChange = (event) => {
     const value = event.target.value;
     setInputtedText(value);
   }
 
-  //submission
   const handleSubmit = (event) => {
     event.preventDefault();
 

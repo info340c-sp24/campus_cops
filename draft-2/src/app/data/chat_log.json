@@ -2,42 +2,42 @@
     {
         "userId": "cherry blossom dubs",
         "userName": "cherry blossom dubs",
-        "userImg": "../assets/1pfp.webp",
+        "userImg": "/img/1pfp.webp",
         "text": "something about campus safety!",
         "timestamp": 1320161040000
     },
     {
         "userId": "'go dawgs' dubs",
         "userName": "'go dawgs' dubs",
-        "userImg": "../assets/2pfp.webp",
+        "userImg": "/img/2pfp.webp",
         "text": "there was a hit & run at behind kane!",
         "timestamp": 1320161760000
     },
     {
         "userId": "studious dubs",
         "userName": "studious dubs",
-        "userImg": "../assets/3pfp.jpeg",
+        "userImg": "/img/3pfp.webp",
         "text": "omg no way i saw them speeding away on a bike",
         "timestamp": 1320162060000
     },
     {
         "userId": "cherry blossom dubs",
         "userName": "cherry blossom dubs",
-        "userImg": "../assets/1pfp.webp",
+        "userImg": "/img/1pfp.webp",
         "text": "suspicious activity near kane hall ( 0--0 )",
         "timestamp": 1320161040000
     },
     {
         "userId": "baby dubs",
         "userName": "baby dubs",
-        "userImg": "../assets/4pfp.jpeg",
+        "userImg": "/img/4pfp.webp",
         "text": "someone stole my stuff in front of ode :,(",
         "timestamp": 1320224280000
     },
     {
         "userId": "studious dubs",
         "userName": "studious dubs",
-        "userImg": "../assets/3pfp.jpeg",
+        "userImg": "/img/2pfp.webp",
         "text": "did you see who did it?",
         "timestamp": 1320224640000
     }
