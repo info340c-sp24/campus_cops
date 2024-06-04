@@ -6,6 +6,7 @@ function Welcome() {
       <main>
         <div className="container">
           <div className="content">
+            <em><strong><h1>Welcome to Campus Cops!</h1></strong></em>
             <img
               src={uwRedSquare}
               alt="UW Red Square during cherry blossom"

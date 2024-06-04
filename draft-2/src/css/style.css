@@ -233,3 +233,9 @@ header {
         font-size: 0.8rem; 
     }
 }
+
+h1{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 8 rem;
+    text-align: center;
+}
