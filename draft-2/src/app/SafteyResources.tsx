@@ -1,6 +1,6 @@
 import uwNightShuttle from "../assets/uw-night-shuttle.png";
 
-function SafteyResources() {
+function SafetyResources() {
   return (
     <>
       <main>
@@ -10,10 +10,12 @@ function SafteyResources() {
               src={uwNightShuttle}
               alt="Map of the University of Washington night shuttle pick up location in West and North campus."
               width="500"
+              aria-label="Map of the University of Washington night shuttle pick up locations in West and North campus."
             />
             <cite>Map from <span> </span>
               <a
                 href="https://transportation.uw.edu/getting-around/shuttles/nightride"
+                aria-label="Night ride shuttle map from University of Washington"
               >
               University of Washington
               </a>
@@ -35,13 +37,13 @@ function SafteyResources() {
             <ul>
               <li>
                 <strong>UW Police Department:</strong>
-                <a target="_blank" href="https://police.uw.edu/">
+                <a target="_blank" href="https://police.uw.edu/" aria-label="Link to UW Police Department website">
                   https://police.uw.edu/
                 </a>
               </li>
               <li>
                 <strong>Emergency Management:</strong>
-                <a target="_blank" href="https://www.washington.edu/emergency/">
+                <a target="_blank" href="https://www.washington.edu/emergency/" aria-label="Link to UW Emergency Management website">
                   https://www.washington.edu/emergency/
                 </a>
               </li>
@@ -56,6 +58,7 @@ function SafteyResources() {
                 <a
                   target="_blank"
                   href="https://www.washington.edu/safecampus/"
+                  aria-label="Link to SafeCampus website"
                 >
                   https://www.washington.edu/safecampus/
                 </a>
@@ -68,4 +71,4 @@ function SafteyResources() {
   );
 }
 
-export default SafteyResources;
+export default SafetyResources;

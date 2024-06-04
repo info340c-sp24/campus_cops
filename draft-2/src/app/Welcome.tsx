@@ -1,5 +1,6 @@
 import uwRedSquare from "../assets/uw-red-square.avif";
 import uwCampusMap from "../assets/UW-Campus-Map.png";
+
 function Welcome() {
   return (
     <>
@@ -10,12 +11,15 @@ function Welcome() {
             <img
               src={uwRedSquare}
               alt="UW Red Square during cherry blossom"
+              aria-label="Image of UW Red Square during cherry blossom"
             />
-            <cite>Image by<span> </span>
+            <cite>
+              Image by<span> </span>
               <a
                 href="https://unsplash.com/photos/people-walking-on-street-during-daytime-cI2_bHXCzRg"
+                aria-label="Image by Eunice Choi on Unsplash"
               >
-              Eunice Choi
+                Eunice Choi
               </a>
             </cite>
             <p>
@@ -29,15 +33,18 @@ function Welcome() {
             </p>
           </div>
           <div className="content">
-          <img
-              src={ uwCampusMap }
+            <img
+              src={uwCampusMap}
               alt="UW Campus"
+              aria-label="Map of UW Campus"
             />
-            <cite>Campus Map by<span> </span>
+            <cite>
+              Campus Map by<span> </span>
               <a
                 href="https://campusvisitorguides.com/uw/uw-campus-map/"
+                aria-label="Campus Map by University of Washington"
               >
-              University of Washington
+                University of Washington
               </a>
             </cite>
             <h2>Discover Safe Routes, Navigate with Confidence</h2>
@@ -55,4 +62,5 @@ function Welcome() {
     </>
   );
 }
+
 export default Welcome;
