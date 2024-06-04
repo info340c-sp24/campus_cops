@@ -1,24 +1,21 @@
 import uwRedSquare from "../assets/uw-red-square.avif";
 import uwCampusMap from "../assets/UW-Campus-Map.png";
-
 function Welcome() {
   return (
     <>
       <main>
         <div className="container">
           <div className="content">
+            <em><strong><h1>Welcome to Campus Cops!</h1></strong></em>
             <img
               src={uwRedSquare}
               alt="UW Red Square during cherry blossom"
-              width="550"
             />
-            <cite>
+            <cite>Image by<span> </span>
               <a
                 href="https://unsplash.com/photos/people-walking-on-street-during-daytime-cI2_bHXCzRg"
-                target="_blank"
-                rel="noopener noreferrer"
               >
-                Image by Eunice Choi
+              Eunice Choi
               </a>
             </cite>
             <p>
@@ -31,8 +28,18 @@ function Welcome() {
               unfamiliar areas.
             </p>
           </div>
-
           <div className="content">
+          <img
+              src={ uwCampusMap }
+              alt="UW Campus"
+            />
+            <cite>Campus Map by<span> </span>
+              <a
+                href="https://campusvisitorguides.com/uw/uw-campus-map/"
+              >
+              University of Washington
+              </a>
+            </cite>
             <h2>Discover Safe Routes, Navigate with Confidence</h2>
             <h3>Explore our Features</h3>
             <p>Real-time Safety Alerts, Interactive Safety Maps, and More.</p>
@@ -45,12 +52,7 @@ function Welcome() {
           </div>
         </div>
       </main>
-      <footer>
-        © 2024 UW CampusCops. All rights reserved. Contact us at
-        info@uwcampuscops.com
-      </footer>
     </>
   );
 }
-
 export default Welcome;
