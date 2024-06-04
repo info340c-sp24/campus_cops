@@ -1,39 +1,44 @@
 [
-  {
-
-      "text": "It's so cold out today!",
-      "timestamp": 1320161040000,
-      "channel": "general",
-      "isCurrentUser": true
-  },
-  {
-      "text": "It's warm over here",
-      "timestamp": 1320161760000,
-      "channel": "general",
-      "isCurrentUser": true
-  },
-  {
-      "text": "Lucky duck",
-      "timestamp": 1320162060000,
-      "channel": "general",
-      "isCurrentUser": false
-  },
-  {
-      "text": "I'm not a duck!",
-      "timestamp": 1320162120000,
-      "channel": "general",
-      "isCurrentUser": true
-  },
-  {
-      "text": "Wassup! It's me y'all",
-      "timestamp": 1320224280000,
-      "channel": "random",
-      "isCurrentUser": false
-  },
-  {
-      "text": "Who?",
-      "timestamp": 1320224640000,
-      "channel": "random",
-      "isCurrentUser": false
-  }
-]
+    {
+        "userId": "cherry blossom dubs",
+        "userName": "cherry blossom dubs",
+        "userImg": "../assets/1pfp.webp",
+        "text": "something about campus safety!",
+        "timestamp": 1320161040000
+    },
+    {
+        "userId": "'go dawgs' dubs",
+        "userName": "'go dawgs' dubs",
+        "userImg": "../assets/2pfp.webp",
+        "text": "there was a hit & run at behind kane!",
+        "timestamp": 1320161760000
+    },
+    {
+        "userId": "studious dubs",
+        "userName": "studious dubs",
+        "userImg": "../assets/3pfp.jpeg",
+        "text": "omg no way i saw them speeding away on a bike",
+        "timestamp": 1320162060000
+    },
+    {
+        "userId": "cherry blossom dubs",
+        "userName": "cherry blossom dubs",
+        "userImg": "../assets/1pfp.webp",
+        "text": "suspicious activity near kane hall ( 0--0 )",
+        "timestamp": 1320161040000
+    },
+    {
+        "userId": "baby dubs",
+        "userName": "baby dubs",
+        "userImg": "../assets/4pfp.jpeg",
+        "text": "someone stole my stuff in front of ode :,(",
+        "timestamp": 1320224280000
+    },
+    {
+        "userId": "studious dubs",
+        "userName": "studious dubs",
+        "userImg": "../assets/3pfp.jpeg",
+        "text": "did you see who did it?",
+        "timestamp": 1320224640000
+    }
+  ]

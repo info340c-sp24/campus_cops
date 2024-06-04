@@ -71,6 +71,7 @@ footer {
 }
 
 /* hack the sizes */
+/* hack the sizes */
 html, body, #root, #root>div {
     height: 100%;
   }
@@ -110,7 +111,6 @@ html, body, #root, #root>div {
     position:relative;
     top:0px;
   }
-
   
   /** Compose Form **/
   textarea.form-control {

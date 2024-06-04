@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
 
 export function ComposeForm(props) {
-  const { addMessageFunction, currentChannel, currentUser } = props;
+  const { addMessageFunction, currentUser } = props;
 
   const [inputtedText, setInputtedText] = useState('');
 
   //typing
   const handleChange = (event) => {
-    const typedValue = event.target.value;
-    setInputtedText(typedValue);
+    const value = event.target.value;
+    setInputtedText(value);
   }
 
   //submission
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    addMessageFunction(inputtedText, currentChannel, currentUser);   
+    addMessageFunction(currentUser, inputtedText);   
     setInputtedText('');
   }
 
   return (
     <form className="my-2" onSubmit={handleSubmit}>
       <div className="input-group">
-        <textarea 
-          className="form-control" rows="2" placeholder="enter a new message..."
+        <img src={currentUser.userImg} alt={currentUser.userName + " avatar"} />
+        <textarea className="form-control" rows={2} placeholder="enter in a message..."
           onChange={handleChange}
           value={inputtedText}
         />
