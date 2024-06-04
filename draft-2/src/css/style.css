@@ -41,6 +41,13 @@ nav a {
     font-family: 'Trebuchet MS', sans-serif;
 }
 
+nav .active {
+    color: #341c63;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
 nav a:hover {
     color: #f8d06a;
 }
