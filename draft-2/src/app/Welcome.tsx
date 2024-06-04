@@ -13,8 +13,6 @@ function Welcome() {
             <cite>Image by<span> </span>
               <a
                 href="https://unsplash.com/photos/people-walking-on-street-during-daytime-cI2_bHXCzRg"
-                target="_blank"
-                rel="noopener noreferrer"
               >
               Eunice Choi
               </a>
@@ -30,6 +28,17 @@ function Welcome() {
             </p>
           </div>
           <div className="content">
+          <img
+              src={ uwCampusMap }
+              alt="UW Campus"
+            />
+            <cite>Campus Map by<span> </span>
+              <a
+                href="https://campusvisitorguides.com/uw/uw-campus-map/"
+              >
+              University of Washington
+              </a>
+            </cite>
             <h2>Discover Safe Routes, Navigate with Confidence</h2>
             <h3>Explore our Features</h3>
             <p>Real-time Safety Alerts, Interactive Safety Maps, and More.</p>
