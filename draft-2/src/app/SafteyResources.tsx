@@ -4,6 +4,7 @@ function SafetyResources() {
   return (
     <>
       <main>
+        <h1>Saftey Resources</h1>
         <section>
           <div className="content">
             <img

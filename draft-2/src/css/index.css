@@ -117,6 +117,17 @@ select {
   box-sizing: border-box;
 }
 
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 button[type="submit"] {
   background-color: #7099df;
   color: white;

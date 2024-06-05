@@ -1,7 +1,6 @@
 import { APIProvider, Map, InfoWindow } from "@vis.gl/react-google-maps";
 
 const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
-console.log(API_KEY);
 
 export interface Location {
   name: string;

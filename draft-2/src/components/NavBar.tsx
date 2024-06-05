@@ -17,6 +17,8 @@ function NavBar() {
         <NavLink to="/reportincident">Report Incident</NavLink>
         <NavLink to="/communitychatbox">Community Chat Forum</NavLink>
         <NavLink to="/safetyresources">Safety Resources</NavLink>
+        <NavLink to="/login">Sign In</NavLink>
+        <NavLink to="/logout">Sign Out</NavLink>
       </div>
     </nav>
   );
