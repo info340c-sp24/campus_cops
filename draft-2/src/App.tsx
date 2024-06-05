@@ -12,9 +12,11 @@ import { Route, Routes, Navigate } from "react-router";
 import { Link } from "react-router-dom";
 import {
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
+import firebase from "firebase/compat/app";
 
 function App() {
   const [registerEmail, setRegisterEmail] = useState("");
