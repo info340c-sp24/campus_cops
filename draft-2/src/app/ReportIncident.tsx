@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CampusMap, Location } from "./components/CampusMap";
+import { CampusMap, Location } from "../components/CampusMap";
 import CAMPUS_LOCATIONS from "./data/CampusLocations";
 
 function ReportIncident() {
@@ -26,7 +26,7 @@ function ReportIncident() {
   return (
     <>
       <main>
-      <h1>Report Incident</h1>
+        <h1>Report Incident</h1>
         <CampusMap incidentLocations={incidentLocations} />
         <div className="content">
           <form onSubmit={onReportIncidentSubmit}>

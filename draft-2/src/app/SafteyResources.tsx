@@ -4,6 +4,7 @@ function SafetyResources() {
   return (
     <>
       <main>
+        <h1>Saftey Resources</h1>
         <section>
           <div className="content">
             <img
@@ -12,12 +13,13 @@ function SafetyResources() {
               width="500"
               aria-label="Map of the University of Washington night shuttle pick up locations in West and North campus."
             />
-            <cite>Map from <span> </span>
+            <cite>
+              Map from <span> </span>
               <a
                 href="https://transportation.uw.edu/getting-around/shuttles/nightride"
                 aria-label="Night ride shuttle map from University of Washington"
               >
-              University of Washington
+                University of Washington
               </a>
             </cite>
             <h2>Emergency Contacts</h2>
@@ -37,13 +39,21 @@ function SafetyResources() {
             <ul>
               <li>
                 <strong>UW Police Department:</strong>
-                <a target="_blank" href="https://police.uw.edu/" aria-label="Link to UW Police Department website">
+                <a
+                  target="_blank"
+                  href="https://police.uw.edu/"
+                  aria-label="Link to UW Police Department website"
+                >
                   https://police.uw.edu/
                 </a>
               </li>
               <li>
                 <strong>Emergency Management:</strong>
-                <a target="_blank" href="https://www.washington.edu/emergency/" aria-label="Link to UW Emergency Management website">
+                <a
+                  target="_blank"
+                  href="https://www.washington.edu/emergency/"
+                  aria-label="Link to UW Emergency Management website"
+                >
                   https://www.washington.edu/emergency/
                 </a>
               </li>

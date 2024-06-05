@@ -1,9 +1,9 @@
-import { ChatPane } from './ChatPane.js';
+import { ChatPane } from "./ChatPane";
 
-export default function ChatPage(props) {
-  const {currentUser, messageArray, addMessageFunction} = props;
-  
-return (
+export default function ChatPage(props: any) {
+  const { currentUser, messageArray, addMessageFunction } = props;
+
+  return (
     <div className="row flex-grow-1">
       <div className="col d-flex flex-column">
         <ChatPane
@@ -13,5 +13,5 @@ return (
         />
       </div>
     </div>
-  )
+  );
 }

@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/campus_cops_logo.webp";
+import logo from "../assets/campus_cops_logo.webp";
 
 function NavBar() {
   return (
@@ -17,8 +16,9 @@ function NavBar() {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/reportincident">Report Incident</NavLink>
         <NavLink to="/communitychatbox">Community Chat Forum</NavLink>
-        <NavLink to="/safteyresources">Safety Resources</NavLink>
-        {/* add User Account Sign In */}
+        <NavLink to="/safetyresources">Safety Resources</NavLink>
+        <NavLink to="/login">Sign In</NavLink>
+        <NavLink to="/logout">Sign Out</NavLink>
       </div>
     </nav>
   );

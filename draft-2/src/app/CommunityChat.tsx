@@ -7,9 +7,9 @@ import DEFAULT_USERS from './data/users.json';
 
 import { getDatabase, onValue, push, ref } from 'firebase/database';
 
-function CommunityChat(props) {
+function CommunityChat() {
   const [messageStateArray, setMessageStateArray] = useState([]);
-  const [currentUser] = useState(DEFAULT_USERS[1])
+  const [currentUser] = useState(DEFAULT_USERS[1]);
 
   useEffect(() => {
     const db = getDatabase()
@@ -49,11 +49,11 @@ function CommunityChat(props) {
   return (
     <div className="container-fluid d-flex flex-column">
       <h1>UW Seattle Community Chat Forum</h1>
-      <ChatPage 
-        currentUser={currentUser} 
+      <ChatPage
+        currentUser={currentUser}
         messageArray={messageStateArray}
         addMessageFunction={addMessage}
-        />
+      />
     </div>
   );
 }
