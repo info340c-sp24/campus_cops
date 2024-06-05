@@ -1,5 +1,5 @@
-import uwRedSquare from "../assets/uw-red-square.avif";
-import uwCampusMap from "../assets/UW-Campus-Map.png";
+import uwRedSquare from "../assets/UW-Campus-Map.png";
+import uwCampusMap from "../assets/uw-red-square.avif";
 
 function Welcome() {
   return (
@@ -7,7 +7,7 @@ function Welcome() {
       <main>
         <div className="container">
           <div className="content">
-            <em><strong><h1>Welcome to Campus Cops!</h1></strong></em>
+            <h1>Welcome to Campus Cops!</h1>
             <img
               src={uwRedSquare}
               alt="UW Red Square during cherry blossom"

@@ -1,13 +1,12 @@
 import CommunityChat from "./app/CommunityChat";
 import ReportIncident from "./app/ReportIncident";
-import SafteyResources from "./app/SafteyResources";
+import SafetyResources from "./app/SafteyResources";
 import Welcome from "./app/Welcome";
 
-// import Nav from "./app/components/Head";
-import Footer from "./app/components/Footer";
+import Footer from "./components/Footer";
+import NavBar from "./components/NavBar";
 
-import { Routes, Route, Navigate } from "react-router-dom";
-import NavBar from "./app/components/NavBar";
+import { Route, Routes, Navigate } from "react-router";
 
 function App() {
   return (
@@ -17,19 +16,17 @@ function App() {
         <Route path="/" element={<Welcome />} />
         <Route path="/reportincident" element={<ReportIncident />} />
         <Route path="/communitychatbox" element={<CommunityChat />} />
-        <Route path="/safteyresources" element={<SafteyResources />} />
-
+        <Route path="/safetyresources" element={<SafetyResources />} />
         <Route
           path="/pageNotFound"
           element={
             <>
-              <h1>Page not found</h1>
+              <h1>Page Not Found</h1>
             </>
           }
         />
         <Route path="*" element={<Navigate to="/pageNotFound" replace />} />
       </Routes>
-
       <Footer />
     </>
   );
