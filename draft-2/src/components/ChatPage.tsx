@@ -5,13 +5,14 @@ export default function ChatPage(props: any) {
 
   return (
     <div className="row flex-grow-1">
-      <div className="col d-flex flex-column">
+      {/* <div className="col d-flex flex-column"> */}
+
         <ChatPane
           currentUser={currentUser}
           messageArray={messageArray}
           addMessageFunction={addMessageFunction}
         />
-      </div>
+
     </div>
   );
 }

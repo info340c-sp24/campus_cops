@@ -1,12 +1,42 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CampusMap, Location } from "../components/CampusMap";
+import { ref, onValue, push } from 'firebase/database';
+import { db } from '../components/FirebaseConfig'; // Assuming you have firebase.js setup properly
 import CAMPUS_LOCATIONS from "./data/CampusLocations";
 
 function ReportIncident() {
   const [incidentLocationName, setIncidentLocationName] = useState<string>();
   const [incidentType, setIncidentType] = useState<string>();
-  const [incidentLocations, setIncidentLocations] =
-    useState<Location[]>(CAMPUS_LOCATIONS);
+  const [incidentLocations, setIncidentLocations] = useState<Location[]>([]);
+
+  useEffect(() => {
+    const incidentsRef = ref(db, 'incidents');
+
+    const handleSnapshot = (snapshot) => {
+      const incidentsData = snapshot.val();
+
+      if (incidentsData) {
+        const incidentsArray = Object.values(incidentsData).map((incident) => ({
+          name: incident.location,
+          coords: findCoordinates(incident.location),
+          incidentType: incident.type,
+        }));
+        setIncidentLocations(incidentsArray);
+      }
+    };
+
+    const unsubscribe = onValue(incidentsRef, handleSnapshot);
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  // Helper function to find coordinates from CAMPUS_LOCATIONS array
+  const findCoordinates = (locationName: string): { lat: number, lng: number } => {
+    const location = CAMPUS_LOCATIONS.find(loc => loc.name === locationName);
+    return location ? location.coords : { lat: 0, lng: 0 }; // Default coordinates if not found
+  };
 
   const onReportIncidentSubmit = (event: any) => {
     event.preventDefault();
@@ -21,6 +51,22 @@ function ReportIncident() {
     });
 
     setIncidentLocations(updatedIncidentLocations);
+
+    // Upload incident to the database
+    const newIncident = {
+      location: incidentLocationName,
+      type: incidentType,
+      timestamp: Date.now(),
+    };
+
+    const incidentsRef = ref(db, 'incidents');
+    push(incidentsRef, newIncident)
+      .then(() => {
+        console.log('Incident reported successfully');
+      })
+      .catch((error) => {
+        console.error('Error reporting incident: ', error);
+      });
   };
 
   return (
@@ -53,7 +99,6 @@ function ReportIncident() {
                   {location.name}
                 </option>
               ))}
-              ;
             </select>
             <br />
 
@@ -71,7 +116,7 @@ function ReportIncident() {
                 -- select an option --{" "}
               </option>
               <option value="Assault">Assault</option>
-              <option value="Safety Issue">Theft</option>
+              <option value="Theft">Theft</option>
               <option value="Hit and Run">Hit and Run</option>
               <option value="Suspicious Activity">Suspicious Activity</option>
               <option value="Other">Other</option>

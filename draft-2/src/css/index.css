@@ -160,7 +160,7 @@ html, body, #root, #root>div {
 /** Messages **/
 .scrollable-pane {
   flex: 1 1 auto;
-  height: 0;
+  height: 20%;
   overflow: auto;
 }
 
@@ -176,6 +176,11 @@ html, body, #root, #root>div {
 
 .message .user-name {
   font-weight: bold;
+}
+
+#message {
+  z-index: 2;
+  color: black;
 }
 
 /* like-button */
