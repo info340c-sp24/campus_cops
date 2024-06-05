@@ -1,13 +1,33 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import ChatPage from './components/ChatPage';
 
 import INITIAL_HISTORY from './data/chat_log.json'
 import DEFAULT_USERS from './data/users.json';
 
+import { getDatabase, onValue, push, ref } from 'firebase/database';
+
 function CommunityChat(props) {
-  const [messageStateArray, setMessageStateArray] = useState(INITIAL_HISTORY);
+  const [messageStateArray, setMessageStateArray] = useState([]);
   const [currentUser] = useState(DEFAULT_USERS[1])
+
+  useEffect(() => {
+    const db = getDatabase()
+    const msgRef = ref(db, 'allMessages');
+
+    onValue(msgRef, (snapshot) => {
+      const allMessages = snapshot.val()
+
+      const allMessagesArray = keyArray.map((key) => {
+        const transform = allMessages[key];
+        transform.firebaseKey = key;
+        return transform
+      })
+
+      setMessageStateArray(allMessagesArray);
+    })
+
+  }, [])
 
   const addMessage = function(userObj, messageText) {
     const newMessage = {
@@ -17,8 +37,13 @@ function CommunityChat(props) {
       "text": messageText,
       "timestamp": Date.now()
     }
-    const newArray = [...messageStateArray, newMessage];
-    setMessageStateArray(newArray);
+    // const newArray = [...messageStateArray, newMessage];
+    // setMessageStateArray(newArray);
+    const db = getDatabase();
+    const msgRef = ref(db, 'allMessages');
+
+    push(msgRef, newMessage)
+
   }
 
   return (
