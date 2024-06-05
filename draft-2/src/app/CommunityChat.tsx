@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-import ChatPage from './components/ChatPage';
+import ChatPage from '../components/ChatPage';
 
 import INITIAL_HISTORY from './data/chat_log.json'
 import DEFAULT_USERS from './data/users.json';
@@ -9,6 +9,7 @@ import { getDatabase, onValue, push, ref } from 'firebase/database';
 
 function CommunityChat() {
   const [messageStateArray, setMessageStateArray] = useState([]);
+  // const [messageStateArray, setMessageStateArray] = useState(INITIAL_HISTORY);
   const [currentUser] = useState(DEFAULT_USERS[1]);
 
   useEffect(() => {
@@ -18,13 +19,13 @@ function CommunityChat() {
     onValue(msgRef, (snapshot) => {
       const allMessages = snapshot.val()
 
-      const allMessagesArray = keyArray.map((key) => {
-        const transform = allMessages[key];
-        transform.firebaseKey = key;
-        return transform
-      })
+      // const allMessagesArray = keyArray.map((key) => {
+      //   const transform = allMessages[key];
+      //   transform.firebaseKey = key;
+      //   return transform
+      // })
 
-      setMessageStateArray(allMessagesArray);
+      setMessageStateArray(allMessages);
     })
 
   }, [])

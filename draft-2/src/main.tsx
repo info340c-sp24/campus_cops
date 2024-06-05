@@ -5,7 +5,6 @@ import { BrowserRouter } from "react-router-dom";
 import "./css/index.css";
 
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBgfyDJTL5xMAUd7teUCyKi_HbPLacdUd8",
@@ -17,8 +16,6 @@ const firebaseConfig = {
   measurementId: "G-JCQXFZC6HY"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

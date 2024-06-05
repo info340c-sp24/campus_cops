@@ -4,9 +4,7 @@ import { ComposeForm } from "./ComposeForm";
 export function ChatPane(props: any) {
   const { messageArray, addMessageFunction, currentUser } = props;
 
-  const messagesToShow = messageArray.sort(
-    (m1: any, m2: any) => m2.timestamp - m1.timestamp
-  );
+  const messagesToShow = messageArray.sort((m1, m2) => m2.timestamp - m1.timestamp);
 
   const messageItemArray = messagesToShow.map((messageObj: any) => {
     const elem = (
@@ -23,7 +21,6 @@ export function ChatPane(props: any) {
             no messages yet...send the first message to start the conversation!
           </p>
         )}
-
         {messageItemArray}
       </div>
 
@@ -58,9 +55,7 @@ function MessageItem(props: any) {
         <p className="user-name">{userName}</p>
         <p>{text}</p>
         <button className="btn like-button" onClick={handleClick}>
-          <span className="material-icons" style={{ color: buttonColor }}>
-            like
-          </span>
+          <span className="material-icons" style={{ color: buttonColor }}>like</span>
         </button>
       </div>
     </div>
