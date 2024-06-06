@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { slide as Menu } from "react-burger-menu";
 import { NavLink } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import logo from "../assets/campus_cops_logo.webp";
 import { auth } from "./FirebaseConfig.tsx";
 
-function NavBar({ user }) {
+interface props {
+  user: any;
+  onLogout: any;
+}
+
+function NavBar(Props: props) {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -47,7 +52,10 @@ function NavBar({ user }) {
       </div>
       <div className="nav-links">
         {isMobile ? (
-          <Menu isOpen={isOpen} onStateChange={(state) => setIsOpen(state.isOpen)}>
+          <Menu
+            isOpen={isOpen}
+            onStateChange={(state: any) => setIsOpen(state.isOpen)}
+          >
             <NavLink to="/" onClick={closeMenu}>
               Home
             </NavLink>
@@ -60,7 +68,7 @@ function NavBar({ user }) {
             <NavLink to="/safetyresources" onClick={closeMenu}>
               Safety Resources
             </NavLink>
-            {user ? (
+            {Props.user ? (
               <button onClick={handleSignOut}>Sign Out</button>
             ) : (
               <NavLink to="/login" onClick={closeMenu}>
@@ -74,7 +82,7 @@ function NavBar({ user }) {
             <NavLink to="/reportincident">Report Incident</NavLink>
             <NavLink to="/communitychatbox">Community Chat Forum</NavLink>
             <NavLink to="/safetyresources">Safety Resources</NavLink>
-            {user ? (
+            {Props.user ? (
               <button onClick={handleSignOut}>Sign Out</button>
             ) : (
               <NavLink to="/login">Sign In</NavLink>

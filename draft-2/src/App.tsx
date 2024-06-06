@@ -1,17 +1,7 @@
-
 import { useState, useEffect } from "react";
 import { Route, Routes, Navigate } from "react-router";
 import { auth } from "./components/FirebaseConfig";
-import {
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged
-} from "firebase/auth";
-<<<<<<< HEAD
-import firebase from "firebase/compat/app";
-=======
+import { signOut, onAuthStateChanged } from "firebase/auth";
 import NavBar from "./components/NavBar";
 import Welcome from "./app/Welcome";
 import ReportIncident from "./app/ReportIncident";
@@ -19,13 +9,12 @@ import CommunityChat from "./app/CommunityChat";
 import SafetyResources from "./app/SafetyResources";
 import Login from "./components/Login";
 import Footer from "./components/Footer";
->>>>>>> 33e483d784a54a4bf7a3bebcdfec047c2dbbdaae
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user: any) => {
       setUser(user);
     });
     return () => unsubscribe();

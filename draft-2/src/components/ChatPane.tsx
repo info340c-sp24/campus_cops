@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { ComposeForm } from "./ComposeForm";
-import { auth } from './FirebaseConfig'
+import { auth } from "./FirebaseConfig";
 
 export function ChatPane(props: any) {
   const { messageArray, addMessageFunction, currentUser } = props;
 
-  const messagesToShow = messageArray.sort((m1, m2) => m2.timestamp - m1.timestamp);
+  const messagesToShow = messageArray.sort(
+    (m1: any, m2: any) => m2.timestamp - m1.timestamp
+  );
 
   const messageItemArray = messagesToShow.map((messageObj: any) => {
     const elem = (
@@ -15,18 +17,20 @@ export function ChatPane(props: any) {
     return elem;
   });
 
-  const [useruid, setUserUID] = useState(null);
+  const [useruid, setUserUID] = useState<String | null>(null);
 
   useEffect(() => {
     const user = auth.currentUser;
     if (user) {
       setUserUID(user.uid);
     }
-  }, [])
-    ;
+  }, []);
   return (
     <>
-      <div className="scrollable-pane pt-2 my-2" style={{ maxHeight: "300px", overflowY: "auto" }}>
+      <div
+        className="scrollable-pane pt-2 my-2"
+        style={{ maxHeight: "300px", overflowY: "auto" }}
+      >
         {messageArray.length === 0 && (
           <p>
             no messages yet...send the first message to start the conversation!
@@ -43,13 +47,13 @@ export function ChatPane(props: any) {
       ) : (
         <p>Sign in to upload messages!</p>
       )}
-
     </>
   );
 }
 
 function MessageItem(props: any) {
   const { userName, userImg, text } = props.messageData;
+  console.log(userName + userImg + text);
 
   useEffect(() => {
     console.log("Message received:", props.messageData);
@@ -75,7 +79,12 @@ function MessageItem(props: any) {
         <p className="user-name">{props.messageData.userName}</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{props.messageData.text}</p>
         <button className="btn like-button" onClick={handleClick}>
-          <span className="material-icons" style={{ color: buttonColor, padding: '10px' }}>Like!</span>
+          <span
+            className="material-icons"
+            style={{ color: buttonColor, padding: "10px" }}
+          >
+            Like!
+          </span>
         </button>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { CampusMap, Location } from "../components/CampusMap";
-import { ref, onValue, push } from 'firebase/database';
-import { db } from '../components/FirebaseConfig'; // Assuming you have firebase.js setup properly
+import { ref, onValue, push } from "firebase/database";
+import { db } from "../components/FirebaseConfig"; // Assuming you have firebase.js setup properly
 import CAMPUS_LOCATIONS from "./data/CampusLocations";
 
 function ReportIncident() {
@@ -10,17 +10,19 @@ function ReportIncident() {
   const [incidentLocations, setIncidentLocations] = useState<Location[]>([]);
 
   useEffect(() => {
-    const incidentsRef = ref(db, 'incidents');
+    const incidentsRef = ref(db, "incidents");
 
-    const handleSnapshot = (snapshot) => {
+    const handleSnapshot = (snapshot: any) => {
       const incidentsData = snapshot.val();
 
       if (incidentsData) {
-        const incidentsArray = Object.values(incidentsData).map((incident) => ({
-          name: incident.location,
-          coords: findCoordinates(incident.location),
-          incidentType: incident.type,
-        }));
+        const incidentsArray = Object.values(incidentsData).map(
+          (incident: any) => ({
+            name: incident.location,
+            coords: findCoordinates(incident.location),
+            incidentType: incident.type,
+          })
+        );
         setIncidentLocations(incidentsArray);
       }
     };
@@ -33,8 +35,10 @@ function ReportIncident() {
   }, []);
 
   // Helper function to find coordinates from CAMPUS_LOCATIONS array
-  const findCoordinates = (locationName: string): { lat: number, lng: number } => {
-    const location = CAMPUS_LOCATIONS.find(loc => loc.name === locationName);
+  const findCoordinates = (
+    locationName: string
+  ): { lat: number; lng: number } => {
+    const location = CAMPUS_LOCATIONS.find((loc) => loc.name === locationName);
     return location ? location.coords : { lat: 0, lng: 0 }; // Default coordinates if not found
   };
 
@@ -59,13 +63,13 @@ function ReportIncident() {
       timestamp: Date.now(),
     };
 
-    const incidentsRef = ref(db, 'incidents');
+    const incidentsRef = ref(db, "incidents");
     push(incidentsRef, newIncident)
       .then(() => {
-        console.log('Incident reported successfully');
+        console.log("Incident reported successfully");
       })
       .catch((error) => {
-        console.error('Error reporting incident: ', error);
+        console.error("Error reporting incident: ", error);
       });
   };
 

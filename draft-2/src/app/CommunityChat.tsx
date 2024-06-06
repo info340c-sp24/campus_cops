@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react';
-import ChatPage from '../components/ChatPage';
-import DEFAULT_USERS from './data/users.json';
-import { getDatabase, ref, push, onValue } from 'firebase/database';
-import { db } from '../components/FirebaseConfig'; // Assuming you have firebase.js setup properly
+import { useEffect, useState } from "react";
+import ChatPage from "../components/ChatPage";
+import DEFAULT_USERS from "./data/users.json";
+import { ref, push, onValue } from "firebase/database";
+import { db } from "../components/FirebaseConfig"; // Assuming you have firebase.js setup properly
 
 function CommunityChat() {
-  const [messageStateArray, setMessageStateArray] = useState([]);
+  const [messageStateArray, setMessageStateArray] = useState<any>([]);
   const [currentUser] = useState(DEFAULT_USERS[1]);
 
   useEffect(() => {
-    const msgRef = ref(db, 'allMessages');
+    const msgRef = ref(db, "allMessages");
 
-    const handleSnapshot = (snapshot) => {
+    const handleSnapshot = (snapshot: any) => {
       const allMessages = snapshot.val();
 
       if (allMessages) {
@@ -32,7 +32,7 @@ function CommunityChat() {
     };
   }, []);
 
-  const addMessage = (userObj, messageText) => {
+  const addMessage = (userObj: any, messageText: any) => {
     const newMessage = {
       userId: userObj.userId,
       userName: userObj.userName,
@@ -41,15 +41,15 @@ function CommunityChat() {
       timestamp: Date.now(),
     };
 
-    const msgRef = ref(db, 'allMessages');
+    const msgRef = ref(db, "allMessages");
 
     // Push the new message to the database
     push(msgRef, newMessage)
       .then(() => {
-        console.log('Message added successfully');
+        console.log("Message added successfully");
       })
       .catch((error) => {
-        console.error('Error adding message: ', error);
+        console.error("Error adding message: ", error);
       });
   };
 
