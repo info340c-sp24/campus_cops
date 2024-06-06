@@ -1,49 +1,35 @@
-import CommunityChat from "./app/CommunityChat";
-import ReportIncident from "./app/ReportIncident";
-import SafetyResources from "./app/SafteyResources";
-import Welcome from "./app/Welcome";
 
-import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
-import { auth } from "./components/FirebaseConfig";
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Route, Routes, Navigate } from "react-router";
-import { Link } from "react-router-dom";
+import { auth } from "./components/FirebaseConfig";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  onAuthStateChanged
 } from "firebase/auth";
+<<<<<<< HEAD
 import firebase from "firebase/compat/app";
+=======
+import NavBar from "./components/NavBar";
+import Welcome from "./app/Welcome";
+import ReportIncident from "./app/ReportIncident";
+import CommunityChat from "./app/CommunityChat";
+import SafetyResources from "./app/SafetyResources";
+import Login from "./components/Login";
+import Footer from "./components/Footer";
+>>>>>>> 33e483d784a54a4bf7a3bebcdfec047c2dbbdaae
 
 function App() {
-  const [registerEmail, setRegisterEmail] = useState("");
-  const [registerPassword, setRegisterPassword] = useState("");
+  const [user, setUser] = useState(null);
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const register = async () => {
-    try {
-      const newUser = await createUserWithEmailAndPassword(
-        auth,
-        registerEmail,
-        registerPassword
-      );
-    } catch (error: any) {
-      console.log(error);
-    }
-  };
-
-  const login = async () => {
-    try {
-      const newUser = await signInWithEmailAndPassword(auth, email, password);
-    } catch (error: any) {
-      console.log(error);
-    }
-  };
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+    return () => unsubscribe();
+  }, []);
 
   const logout = async () => {
     await signOut(auth);
@@ -52,99 +38,13 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      <NavBar user={user} onLogout={logout} />
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/reportincident" element={<ReportIncident />} />
         <Route path="/communitychatbox" element={<CommunityChat />} />
         <Route path="/safetyresources" element={<SafetyResources />} />
-
-        <Route
-          path="/signup"
-          element={
-            <>
-              <div>
-                <h1>Sign Up</h1>
-                <section>
-                  <Link to={"/login"}>Sign In</Link>
-                  <form>
-                    <input
-                      type="text"
-                      placeholder="Email"
-                      onChange={(event) => {
-                        setRegisterEmail(event.target.value);
-                      }}
-                    />
-                    <input
-                      type="password"
-                      placeholder="Password"
-                      onChange={(event) => {
-                        setRegisterPassword(event.target.value);
-                      }}
-                    />
-                    <button type="submit" onClick={register}>
-                      Submit
-                    </button>
-                  </form>
-                </section>
-              </div>
-            </>
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <>
-              <div>
-                <h1>Sign Up</h1>
-                <section>
-                  <Link to={"/signup"}>Sign Up</Link>
-                  <form>
-                    <input
-                      type="text"
-                      placeholder="Email"
-                      onChange={(event) => {
-                        setEmail(event.target.value);
-                      }}
-                    />
-                    <input
-                      type="password"
-                      placeholder="Password"
-                      onChange={(event) => {
-                        setPassword(event.target.value);
-                      }}
-                    />
-                    <button type="submit" onClick={login}>
-                      Submit
-                    </button>
-                  </form>
-                </section>
-              </div>
-            </>
-          }
-        />
-        <Route
-          path="/logout"
-          element={
-            <div>
-              <main>
-                <p>{}</p>
-                <button type="submit" onClick={logout}>
-                  Sign Out
-                </button>
-              </main>
-            </div>
-          }
-        />
-
-        <Route
-          path="/pageNotFound"
-          element={
-            <>
-              <h1>Page Not Found</h1>
-            </>
-          }
-        />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<Navigate to="/pageNotFound" replace />} />
       </Routes>
       <Footer />

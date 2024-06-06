@@ -1,51 +1,57 @@
-import React, {useEffect, useState} from 'react';
-
+import { useEffect, useState } from 'react';
 import ChatPage from '../components/ChatPage';
-
-import INITIAL_HISTORY from './data/chat_log.json'
 import DEFAULT_USERS from './data/users.json';
-
-import { getDatabase, onValue, push, ref } from 'firebase/database';
+import { getDatabase, ref, push, onValue } from 'firebase/database';
+import { db } from '../components/FirebaseConfig'; // Assuming you have firebase.js setup properly
 
 function CommunityChat() {
   const [messageStateArray, setMessageStateArray] = useState([]);
-  // const [messageStateArray, setMessageStateArray] = useState(INITIAL_HISTORY);
   const [currentUser] = useState(DEFAULT_USERS[1]);
 
   useEffect(() => {
-    const db = getDatabase()
     const msgRef = ref(db, 'allMessages');
 
-    onValue(msgRef, (snapshot) => {
-      const allMessages = snapshot.val()
+    const handleSnapshot = (snapshot) => {
+      const allMessages = snapshot.val();
 
-      // const allMessagesArray = keyArray.map((key) => {
-      //   const transform = allMessages[key];
-      //   transform.firebaseKey = key;
-      //   return transform
-      // })
+      if (allMessages) {
+        const allMessagesArray = Object.keys(allMessages).map((key) => ({
+          ...allMessages[key],
+          firebaseKey: key,
+        }));
+        setMessageStateArray(allMessagesArray);
+      }
+    };
 
-      setMessageStateArray(allMessages);
-    })
+    // Listen for changes in the database
+    const unsubscribe = onValue(msgRef, handleSnapshot);
 
-  }, [])
+    return () => {
+      // Clean up listener when component unmounts
+      unsubscribe();
+    };
+  }, []);
 
-  const addMessage = function(userObj, messageText) {
+  const addMessage = (userObj, messageText) => {
     const newMessage = {
-      "userId": userObj.userId,
-      "userName": userObj.userName,
-      "userImg": userObj.userImg,
-      "text": messageText,
-      "timestamp": Date.now()
-    }
-    // const newArray = [...messageStateArray, newMessage];
-    // setMessageStateArray(newArray);
-    const db = getDatabase();
+      userId: userObj.userId,
+      userName: userObj.userName,
+      userImg: userObj.userImg,
+      text: messageText,
+      timestamp: Date.now(),
+    };
+
     const msgRef = ref(db, 'allMessages');
 
+    // Push the new message to the database
     push(msgRef, newMessage)
-
-  }
+      .then(() => {
+        console.log('Message added successfully');
+      })
+      .catch((error) => {
+        console.error('Error adding message: ', error);
+      });
+  };
 
   return (
     <div className="container-fluid d-flex flex-column">

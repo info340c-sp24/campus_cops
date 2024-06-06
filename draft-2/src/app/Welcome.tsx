@@ -3,7 +3,7 @@ import uwCampusMap from "../assets/uw-red-square.avif";
 
 function Welcome() {
   return (
-    <>
+    <>  
       <main>
         <div className="container">
           <div className="content">
